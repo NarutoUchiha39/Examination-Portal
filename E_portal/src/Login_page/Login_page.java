@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.Timer;
-public class Login_page implements ActionListener
+public class Login_page extends Examination_portal implements ActionListener 
 {
     static Timer timer;
     static private JPanel panel;

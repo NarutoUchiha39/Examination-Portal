@@ -12,8 +12,6 @@ public class Examination_portal
         hashMap.put("Gary Kyles","160102110");
         hashMap.put("Laswell","1601012112");
        Login_page.MakeLoginPage();
-       System.out.println("A");
-
         
     }
 }
