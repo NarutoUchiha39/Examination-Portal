@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Questions_UI",
+            "request": "launch",
+            "mainClass": "Questions_UI.Questions_UI",
+            "projectName": "Examination_portal_41b0f1ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Examination_portal",
+            "request": "launch",
+            "mainClass": "MainFile.Examination_portal",
+            "projectName": "Examination_portal_41b0f1ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch f",
+            "request": "launch",
+            "mainClass": "f",
+            "projectName": "Examination_portal_41b0f1ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch f",
+            "request": "launch",
+            "mainClass": "Login_page.f",
+            "projectName": "Examination_portal_41b0f1ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Login_page",
+            "request": "launch",
+            "mainClass": "Login_page.Login_page",
+            "projectName": "Examination_portal_41b0f1ee"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "Examination_portal",
+            "projectName": "Examination_portal_41b0f1ee",
+            "vmArgs": "--module-path E:/openjfx-19_windows-x64_bin-sdk/javafx-sdk-19/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
