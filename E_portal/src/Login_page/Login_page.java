@@ -22,7 +22,7 @@ public class Login_page extends Examination_portal implements ActionListener
         panel = new JPanel();
         frame = new JFrame("EXAMINATION PORTAL");
         frame.setSize(1980,720);
-        ImageIcon imgicon = new ImageIcon("E://Desktop//SY//Java//Practicals//Java project//Examination_portal//src//portal.jpg");
+        ImageIcon imgicon = new ImageIcon("E://Desktop//Examination-Portal//E_portal//portal.jpg");
         frame.setIconImage(imgicon.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -35,6 +35,7 @@ public class Login_page extends Examination_portal implements ActionListener
         Heading.setFont(new Font("Verdana",Font.BOLD,40));
         panel.add(Heading);
        
+        
         user_name = new JLabel("User Name: ");
         user_name.setBounds(400,200,200,25);
         user_name.setFont(new Font("Verdana",Font.BOLD,20));
