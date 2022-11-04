@@ -21,7 +21,7 @@ public class Login_page extends Examination_portal implements ActionListener
     {
         panel = new JPanel();
         frame = new JFrame("EXAMINATION PORTAL");
-        frame.setSize(1980,720);
+        frame.setSize(1980,790);
         ImageIcon imgicon = new ImageIcon("E://Desktop//Examination-Portal//E_portal//portal.jpg");
         frame.setIconImage(imgicon.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -77,7 +77,7 @@ public class Login_page extends Examination_portal implements ActionListener
     {
         String User_text = User_Text.getText();
         String password = Password_Text.getText();
-        if(Examination_portal.hashMap.containsKey(User_text) && Examination_portal.hashMap.get(User_text).equals(password))
+        if(hashMap.containsKey(User_text) && hashMap.get(User_text).equals(password))
         {
             Questions_UI.start_quiz();
         }

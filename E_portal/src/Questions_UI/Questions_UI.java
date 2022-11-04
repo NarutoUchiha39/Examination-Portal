@@ -4,9 +4,10 @@ import java.util.Timer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
-public class Questions_UI implements ActionListener
+import MainFile.Examination_portal;
+
+public class Questions_UI extends Examination_portal implements ActionListener
 {
     static public int n=1;
     static private HashMap<Integer,JLabel> map= new HashMap<>();
@@ -26,8 +27,8 @@ public class Questions_UI implements ActionListener
     
         panel = new JPanel();
         frame = new JFrame("EXAMINATION PORTAL");
-        frame.setSize(1980,750);
-        ImageIcon imgicon = new ImageIcon("E://Desktop//SY//Java//Practicals//Java project//Examination_portal//src//portal.jpg");
+        frame.setSize(1980,790);
+        ImageIcon imgicon = new ImageIcon("E://Desktop//Examination-Portal//E_portal//portal.jpg");
         frame.setIconImage(imgicon.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
