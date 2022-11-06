@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch d",
+            "request": "launch",
+            "mainClass": "Login_page.d",
+            "projectName": "E_portal_57a78dc0"
+        },
+        {
+            "type": "java",
             "name": "Launch Examination_portal",
             "request": "launch",
             "mainClass": "MainFile.Examination_portal",
