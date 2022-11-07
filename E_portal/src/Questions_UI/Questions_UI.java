@@ -78,6 +78,7 @@ public class Questions_UI extends Examination_portal implements ActionListener
         button.setForeground(new Color(0,0,255));
         button.addActionListener(new Questions_UI());
         panel.add(button);
+        frame.add(panel);
         frame.setVisible(true);
     }
     public static void start_quiz()
