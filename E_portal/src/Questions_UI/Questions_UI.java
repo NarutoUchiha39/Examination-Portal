@@ -109,8 +109,8 @@ public class Questions_UI extends Examination_portal implements ActionListener
         }
         else if(n<=10 && n>5)
         {
-            map.get(Integer.parseInt(DS.answers.get(n%5))).setForeground(new Color(0,0,255));
-            if(!(Area.getText().equals(DS.answers.get(n%5))))
+            map.get(Integer.parseInt(DS.answers.get(n%6+1))).setForeground(new Color(0,0,255));
+            if(!(Area.getText().equals(DS.answers.get(n%6+1))))
             {
                 map.get(Integer.parseInt(Area.getText())).setForeground(new Color(255,0,0));
             }
@@ -142,7 +142,7 @@ public class Questions_UI extends Examination_portal implements ActionListener
                     }
                     else
                     {
-                        set_questions(DS.Question_list.get(n%5),DS.Options.get(n%5));
+                        set_questions(DS.Question_list.get(n%6+1),DS.Options.get(n%6+1));
                     }
                    
                 }
@@ -246,7 +246,7 @@ class DS extends Questions_UI
         Question_list.put
         (5,"When a pop() operation is called on an empty queue, what is the condition called?");
         Options.put(5,new String[]{"1) Overflow","2) Underflow","3) Syntax Error","4) Garbage Value"});
-        answers.put(5, "1");
+        answers.put(5, "2");
     }
 
     
