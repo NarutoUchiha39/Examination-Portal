@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Questions_UI",
+            "request": "launch",
+            "mainClass": "Questions_UI.Questions_UI",
+            "projectName": "E_portal_57a78dc0"
+        },
+        {
+            "type": "java",
             "name": "Launch d",
             "request": "launch",
             "mainClass": "Login_page.d",

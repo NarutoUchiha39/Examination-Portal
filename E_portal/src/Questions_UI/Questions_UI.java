@@ -21,7 +21,11 @@ public class Questions_UI extends Examination_portal implements ActionListener
     static private JTextArea Area;
     static private JLabel Option5;
     static private JButton button;
-    
+    public static void start_quiz() 
+    {
+        
+        java_UI.Question_display();
+    }
     static void set_questions(String questions,String[]opt)
     {
     
@@ -37,7 +41,7 @@ public class Questions_UI extends Examination_portal implements ActionListener
         panel.setLayout(null);
 
         Questions = new JLabel(questions);
-        Questions.setBounds(350,50,1200,25);
+        Questions.setBounds(390,50,1200,25);
         Questions.setFont(new Font("Verdana",Font.BOLD,20));
         panel.add(Questions);
 
@@ -81,10 +85,7 @@ public class Questions_UI extends Examination_portal implements ActionListener
         frame.add(panel);
         frame.setVisible(true);
     }
-    public static void start_quiz()
-    {
-        java_UI.Question_display();
-    }
+  
     @Override
     public void actionPerformed(ActionEvent e) 
     {
@@ -92,10 +93,22 @@ public class Questions_UI extends Examination_portal implements ActionListener
         map.put(2, Option2);
         map.put(3, Option3);
         map.put(4, Option4);
-        map.get(Integer.parseInt(java_UI.answers.get(n))).setForeground(new Color(0,0,255));
-        if(!(Area.getText().equals(java_UI.answers.get(n))))
+        System.out.println(n);
+        if(n<=5)
         {
-            map.get(Integer.parseInt(Area.getText())).setForeground(new Color(255,0,0));
+            map.get(Integer.parseInt(java_UI.answers.get(n))).setForeground(new Color(0,0,255));
+            if(!(Area.getText().equals(java_UI.answers.get(n))))
+            {
+                map.get(Integer.parseInt(Area.getText())).setForeground(new Color(255,0,0));
+            }
+        }
+        else
+        {
+            map.get(Integer.parseInt(DS.answers.get(n%5))).setForeground(new Color(0,0,255));
+            if(!(Area.getText().equals(DS.answers.get(n%5))))
+            {
+                map.get(Integer.parseInt(Area.getText())).setForeground(new Color(255,0,0));
+            }
         }
                   
         Timer timer = new Timer();
@@ -105,7 +118,20 @@ public class Questions_UI extends Examination_portal implements ActionListener
             public void run() 
             {
                 n+=1;
-                set_questions(java_UI.Question_list.get(n), java_UI.Options.get(n));        
+                if(n<=5)
+                {
+                    set_questions(java_UI.Question_list.get(n),java_UI.Options.get(n));
+                }
+                else
+                {
+                    if(n==6)
+                    {
+                        DS.Question_display();
+                    }
+                    set_questions(DS.Question_list.get(n%5),DS.Options.get(n%5));
+                }
+               
+                
             }
         };
         timer.schedule(task, 3000);
@@ -141,14 +167,74 @@ class java_UI extends Questions_UI
         Options.put(3,new String[]{"1) The reference of the array","2) Copy of the array","3) Length of the array","4) Copy of the first element"});
         answers.put(3, "1");
 
+        Question_list.put
+        (4,"When is the finalize() method called?");
+        Options.put(4,new String[]{"1) Before Garbage Collection","2) Before Object goes out of Scope","3) Before Variable goes out of scope","4) None"});
+        answers.put(4, "1");
 
+
+        Question_list.put
+        (5,"Where is System class defined?");
+        Options.put(5,new String[]{"1) Java.Lang","2) Java.util.package","3) Java.util.IO","4) None"});
+        answers.put(5, "1");
     }
 
+    
     static void Question_display()
     {
         assign_question();
         
         set_questions(Question_list.get(n),Options.get(n));
+    
+    }
+}
+
+class DS extends Questions_UI
+{
+    int score;
+    static HashMap<Integer,String> Question_list = new HashMap<Integer,String>();
+    static HashMap<Integer,String[]> Options = new HashMap<Integer,String[]>();
+    static HashMap<Integer,String> answers = new HashMap<Integer,String>();
+    static JLabel label;
+
+    DS()
+    {
+        score=0;
+    }
+    static void assign_question()
+    {
+        Question_list.put(1,"How is the 2nd element in an array accessed based on pointer notation?");
+        Options.put(1,new String[]{"1) *a + 2","2) *(a + 2)","3) *(*a + 2)","4) &(a + 2)"});
+        answers.put(1, "2");
+
+        Question_list.put
+        (2,"Which of the following is not the type of queue? ");
+        Options.put(2,new String[]{"1) Priority queue","2) Single-ended queue","3) Circular queue","4) Ordinary queue"});
+        answers.put(2, "2");
+
+        Question_list.put
+        (3,"What is the disadvantage of array data structure?");
+        Options.put(3,new String[]{"1) memory to be allocated should be known","2)Elements can be accessed in constant time","3) Elements are stored in contiguous memory blocks","4) None"});
+        answers.put(3, "1");
+
+        Question_list.put
+        (4,"How are String represented in memory in C?");
+        Options.put(4,new String[]{"1) An array of characters.","2) The object of some class","3) Same as other primitive data types.","4) LinkedList of characters"});
+        answers.put(4, "1");
+
+
+        Question_list.put
+        (5,"When a pop() operation is called on an empty queue, what is the condition called?");
+        Options.put(5,new String[]{"1) Overflow","2) Underflow","3) Syntax Error","4) Garbage Value"});
+        answers.put(5, "1");
+    }
+
+    
+    static void Question_display()
+    {
+        assign_question();
+        
+        set_questions(Question_list.get(n%5),Options.get(n%5));
     
     }
 }
