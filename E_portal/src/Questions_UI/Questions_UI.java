@@ -21,6 +21,8 @@ public class Questions_UI extends Examination_portal implements ActionListener
     static private JTextArea Area;
     static private JLabel Option5;
     static private JButton button;
+    static java_UI obj = new java_UI();
+    static DS obj2 = new DS();
     public static void start_quiz() 
     {
         
@@ -41,7 +43,7 @@ public class Questions_UI extends Examination_portal implements ActionListener
         panel.setLayout(null);
 
         Questions = new JLabel(questions);
-        Questions.setBounds(390,50,1200,25);
+        Questions.setBounds(50,50,1200,25);
         Questions.setFont(new Font("Verdana",Font.BOLD,20));
         panel.add(Questions);
 
@@ -93,7 +95,6 @@ public class Questions_UI extends Examination_portal implements ActionListener
         map.put(2, Option2);
         map.put(3, Option3);
         map.put(4, Option4);
-        System.out.println(n);
         if(n<=5)
         {
             map.get(Integer.parseInt(java_UI.answers.get(n))).setForeground(new Color(0,0,255));
@@ -101,13 +102,21 @@ public class Questions_UI extends Examination_portal implements ActionListener
             {
                 map.get(Integer.parseInt(Area.getText())).setForeground(new Color(255,0,0));
             }
+            else
+            {
+                obj.score+=1;
+            }
         }
-        else
+        else if(n<=10 && n>5)
         {
             map.get(Integer.parseInt(DS.answers.get(n%5))).setForeground(new Color(0,0,255));
             if(!(Area.getText().equals(DS.answers.get(n%5))))
             {
                 map.get(Integer.parseInt(Area.getText())).setForeground(new Color(255,0,0));
+            }
+            else
+            {
+                obj2.score+=1;
             }
         }
                   
@@ -117,20 +126,31 @@ public class Questions_UI extends Examination_portal implements ActionListener
             @Override
             public void run() 
             {
+                
                 n+=1;
+                System.out.println((n));
                 if(n<=5)
                 {
                     set_questions(java_UI.Question_list.get(n),java_UI.Options.get(n));
                 }
-                else
+                else if(n<=10 && n>5)
                 {
                     if(n==6)
                     {
+                        System.out.println(obj.score);
                         DS.Question_display();
                     }
-                    set_questions(DS.Question_list.get(n%5),DS.Options.get(n%5));
+                    else
+                    {
+                        set_questions(DS.Question_list.get(n%5),DS.Options.get(n%5));
+                    }
+                   
                 }
-               
+               else
+               {
+                    System.out.println(obj.score);
+                    System.out.println(obj2.score);
+               }
                 
             }
         };
