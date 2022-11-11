@@ -191,12 +191,12 @@ class result_Screen extends Questions_UI
         Option3.setFont(new Font("Verdana",Font.BOLD,30));
         panel.add(Option3);
 
-        Option4 = new JLabel("Java Marks:  "+obj.score+" /10");
+        Option4 = new JLabel("Java Marks:  "+obj.score+" /5");
         Option4.setBounds(830,230,1200,65);
         Option4.setFont(new Font("Verdana",Font.BOLD,30));
         panel.add(Option4);
 
-        Option5 = new JLabel("Data Structure Marks:  "+obj2.score+" /10");
+        Option5 = new JLabel("Data Structure Marks:  "+obj2.score+" /5");
         Option5.setBounds(830,370,1200,65);
         Option5.setFont(new Font("Verdana",Font.BOLD,30));
         panel.add(Option5);
