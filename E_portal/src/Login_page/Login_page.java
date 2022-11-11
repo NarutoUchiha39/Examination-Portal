@@ -13,15 +13,15 @@ public class Login_page extends Examination_portal implements ActionListener
     static private JFrame frame;
     static private JLabel Heading;
     static private JLabel user_name;
-    static private JTextField User_Text;
+    static public JTextField User_Text;
     static private JLabel password;
-    static private JTextField Password_Text;
+    static public JTextField Password_Text;
     static private JLabel print;
    public static void MakeLoginPage ()
     {
         panel = new JPanel();
         frame = new JFrame("EXAMINATION PORTAL");
-        frame.setSize(1980,790);
+        frame. setExtendedState(JFrame. MAXIMIZED_BOTH); 
         ImageIcon imgicon = new ImageIcon("E://Desktop//Examination-Portal//E_portal//portal.jpg");
         frame.setIconImage(imgicon.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

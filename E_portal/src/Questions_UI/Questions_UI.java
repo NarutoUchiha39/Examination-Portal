@@ -6,34 +6,34 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import MainFile.Examination_portal;
-
+import Login_page.Login_page;
 public class Questions_UI extends Examination_portal implements ActionListener
 {
     static public int n=1;
-    static private HashMap<Integer,JLabel> map= new HashMap<>();
-    static private JFrame frame;
-    static private JPanel panel;
-    static private JLabel Questions;
-    static private JLabel Option1;
-    static private JLabel Option2;
-    static private JLabel Option3;
-    static private JLabel Option4;
-    static private JTextArea Area;
-    static private JLabel Option5;
-    static private JButton button;
-    static java_UI obj = new java_UI();
-    static DS obj2 = new DS();
+    static public HashMap<Integer,JLabel> map= new HashMap<>();
+    static public JFrame frame;
+    static public JPanel panel;
+    static public JLabel Questions;
+    static public JLabel Option1;
+    static public JLabel Option2;
+    static public JLabel Option3;
+    static public JLabel Option4;
+    static public JTextArea Area;
+    static public JLabel Option5;
+    static public JButton button;
+    static public java_UI obj = new java_UI();
+    static public DS obj2 = new DS();
     public static void start_quiz() 
     {
-        
         java_UI.Question_display();
     }
+
     static void set_questions(String questions,String[]opt)
     {
     
         panel = new JPanel();
         frame = new JFrame("EXAMINATION PORTAL");
-        frame.setSize(1980,790);
+        frame. setExtendedState(JFrame. MAXIMIZED_BOTH); 
         ImageIcon imgicon = new ImageIcon("E://Desktop//Examination-Portal//E_portal//portal.jpg");
         frame.setIconImage(imgicon.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -148,8 +148,8 @@ public class Questions_UI extends Examination_portal implements ActionListener
                 }
                else
                {
-                    System.out.println(obj.score);
-                    System.out.println(obj2.score);
+                    frame.dispose();
+                    result_Screen.display();
                }
                 
             }
@@ -159,9 +159,60 @@ public class Questions_UI extends Examination_portal implements ActionListener
         
     }
 }
+class result_Screen extends Questions_UI
+{
+    static void display()
+    {
+
+        panel = new JPanel();
+
+        frame = new JFrame("EXAMINATION PORTAL");
+        frame. setExtendedState(JFrame. MAXIMIZED_BOTH); 
+        ImageIcon imgicon = new ImageIcon("E://Desktop//Examination-Portal//E_portal//portal.jpg");
+        frame.setIconImage(imgicon.getImage());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        panel.setBackground(Color.decode("#00FFFF"));
+        frame.add(panel);
+        panel.setLayout(null);
+
+        Option1 = new JLabel("Results");
+        Option1.setBounds(550, 10, 600,90);
+        Option1.setFont(new Font("Verdana",Font.BOLD,60));
+        panel.add(Option1);
+        
+        Option2 = new JLabel("Name:    "+Login_page.User_Text.getText());
+        Option2.setBounds(80,230,1200,65);
+        Option2.setFont(new Font("Verdana",Font.BOLD,30));
+        panel.add(Option2);
+
+        Option3 = new JLabel("Roll Number:  "+Login_page.Password_Text.getText());
+        Option3.setBounds(80,370,1200,65);
+        Option3.setFont(new Font("Verdana",Font.BOLD,30));
+        panel.add(Option3);
+
+        Option4 = new JLabel("Java Marks:  "+obj.score+" /10");
+        Option4.setBounds(830,230,1200,65);
+        Option4.setFont(new Font("Verdana",Font.BOLD,30));
+        panel.add(Option4);
+
+        Option5 = new JLabel("Data Structure Marks:  "+obj2.score+" /10");
+        Option5.setBounds(830,370,1200,65);
+        Option5.setFont(new Font("Verdana",Font.BOLD,30));
+        panel.add(Option5);
+
+        JLabel Option6 = new JLabel("Percentage:  "+(((obj.score+obj2.score)/10)*100)+" %");
+        Option6.setBounds(550,570,1200,65);
+        Option6.setFont(new Font("Verdana",Font.BOLD,30));
+        panel.add(Option6);
+
+        frame.setVisible(true);
+
+    }
+}
 class java_UI extends Questions_UI
 {
-    int score;
+    Double score;
     static HashMap<Integer,String> Question_list = new HashMap<Integer,String>();
     static HashMap<Integer,String[]> Options = new HashMap<Integer,String[]>();
     static HashMap<Integer,String> answers = new HashMap<Integer,String>();
@@ -169,7 +220,7 @@ class java_UI extends Questions_UI
 
     java_UI()
     {
-        score=0;
+        score=0.0;
     }
     static void assign_question()
     {
@@ -211,7 +262,7 @@ class java_UI extends Questions_UI
 
 class DS extends Questions_UI
 {
-    int score;
+    Double score;
     static HashMap<Integer,String> Question_list = new HashMap<Integer,String>();
     static HashMap<Integer,String[]> Options = new HashMap<Integer,String[]>();
     static HashMap<Integer,String> answers = new HashMap<Integer,String>();
@@ -219,7 +270,7 @@ class DS extends Questions_UI
 
     DS()
     {
-        score=0;
+        score=0.0;
     }
     static void assign_question()
     {
