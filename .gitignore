@@ -12,3 +12,4 @@ E_portal/bin/Login_page/Login_page.class
 E_portal/bin/Questions_UI/Questions_UI.class
 
 .fake
+*.class
