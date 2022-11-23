@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PieChart_AWT",
+            "request": "launch",
+            "mainClass": "Piechart.PieChart_AWT",
+            "projectName": "E_portal_57a78dc0"
+        },
+        {
+            "type": "java",
             "name": "Launch Questions_UI",
             "request": "launch",
             "mainClass": "Questions_UI.Questions_UI",

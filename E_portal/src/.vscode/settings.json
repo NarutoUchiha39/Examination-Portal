@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "e:\\Desktop\\Examination-Portal\\E_portal\\lib\\jfreechart-1.0.19\\lib\\jcommon-1.0.23.jar",
+        "e:\\Desktop\\Examination-Portal\\E_portal\\lib\\jfreechart-1.0.19\\lib\\jfreechart-1.0.19.jar"
+    ]
+}

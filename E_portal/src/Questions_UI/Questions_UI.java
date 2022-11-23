@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import MainFile.Examination_portal;
 import Login_page.Login_page;
+import Piechart.PieChart_AWT;
+import Piechart.PieChart_AWT.*;
 public class Questions_UI extends Examination_portal implements ActionListener
 {
     static public int n=1;
@@ -206,13 +208,27 @@ class result_Screen extends Questions_UI
         Option6.setFont(new Font("Verdana",Font.BOLD,30));
         panel.add(Option6);
 
+        button =new JButton("Performance review");
+        button.setBounds(520,640,350,25);
+        button.setFont(new Font("Verdana",Font.BOLD,20));
+        button.setForeground(new Color(0,0,255));
+        button.addActionListener(new result_Screen());
+        panel.add(button);
+
         frame.setVisible(true);
+
+    }
+    public void actionPerformed(ActionEvent e) 
+    {
+        PieChart_AWT.score1=obj.score;
+        PieChart_AWT.Score2=obj2.score;
+        PieChart_AWT.start();
 
     }
 }
 class java_UI extends Questions_UI
 {
-    Double score;
+    public Double score;
     static HashMap<Integer,String> Question_list = new HashMap<Integer,String>();
     static HashMap<Integer,String[]> Options = new HashMap<Integer,String[]>();
     static HashMap<Integer,String> answers = new HashMap<Integer,String>();
@@ -262,7 +278,7 @@ class java_UI extends Questions_UI
 
 class DS extends Questions_UI
 {
-    Double score;
+    public Double score;
     static HashMap<Integer,String> Question_list = new HashMap<Integer,String>();
     static HashMap<Integer,String[]> Options = new HashMap<Integer,String[]>();
     static HashMap<Integer,String> answers = new HashMap<Integer,String>();
