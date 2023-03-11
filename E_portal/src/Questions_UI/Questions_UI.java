@@ -216,7 +216,6 @@ class result_Screen extends Questions_UI
         panel.add(button);
 
         frame.setVisible(true);
-
     }
     public void actionPerformed(ActionEvent e) 
     {

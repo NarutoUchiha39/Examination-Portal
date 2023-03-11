@@ -4,7 +4,7 @@ import java.util.*;
 public class Examination_portal
 {
     public static HashMap<String,String> hashMap = new HashMap<String,String>();
-    public static void main(String[] args) 
+    public static void main(String... args)
     {
         hashMap.put("John Price", "16010121199");
         hashMap.put("Naruto","160101220");

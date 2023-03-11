@@ -7,7 +7,6 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.general.PieDataset;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
- 
 public class PieChart_AWT extends JFrame
 {
    public static Double score1;

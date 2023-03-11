@@ -13,3 +13,5 @@ E_portal/bin/Questions_UI/Questions_UI.class
 
 .fake
 *.class
+E_portal/bin/Questions_UI/DS.class
+E_portal/bin/Questions_UI/java_UI.class

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Examination-Portal.iml" filepath="$PROJECT_DIR$/.idea/Examination-Portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/E_portal/lib/jfreechart-1.0.19/jfreechart.iml" filepath="$PROJECT_DIR$/E_portal/lib/jfreechart-1.0.19/jfreechart.iml" />
+    </modules>
+  </component>
+</project>
